@@ -1,0 +1,17 @@
+{
+	"name": "Demo",
+	"description": "Demo",
+	"version": "0.0.1",
+	"dependencies": {
+		"mongodb": "latest",
+    		"express": "latest",
+    		"express-fileupload": "latest",
+		"body-parser": "latest",
+		"watson-developer-cloud": "latest",
+		"ejs": "latest"
+	},
+	"scripts" : {
+		"start": "node server.js"
+	},
+	"engine": "*"
+}

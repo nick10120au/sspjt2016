@@ -1,0 +1,40 @@
+<HTML>
+<BODY>
+<head>
+  <title><%= r.name %></title>
+</head>
+<H2><%= r.name %></H2>
+<% if (r.photo != null) { %>
+<p>
+  <img src="data:<%= r.mimetype %>;base64,<%= r.photo %>">
+<br>
+<% } %>
+<p>Borough: <%= r.borough %></p>
+<p>Cuisine: <%= r.cuisine %></p>
+<p>Street: <%= r.address.street %></p>
+<p>Building: <%= r.address.building %></p>
+<p>Zipcode: <%= r.address.zipcode %></p>
+<p>GPS: <%= r.address['coord']%></p>
+<p>Rating: 
+<ol>
+  <% r.rate.forEach(function(rates) { %>
+  <li>User: <%= rates.ppl %> &nbsp&nbsp Score: <%= rates.score %></li>
+  <% });                        %>
+</ol>
+</p>
+<p>Created by: <%= r.createby %></p>
+<a href='/map?lat=<%= r.address.coord[1] %>&
+		lon=<%= r.address.coord[0] %>&
+		name=<%= r.name %>&
+		id=<%= r.id %>'
+>Google map</a><br><br>
+
+<a href='/rate?id=<%= r._id %>&createby=<%=r.createby%>'>Rate</a>
+<a href='/edit?id=<%= r._id %>&createby=<%=r.createby%>&borough=<%= r.borough %>&cuisine=<%= r.cuisine %>&street=<%= r.address.street %>&building=<%= r.address.building %>&zipcode=<%= r.address.zipcode %>&lat=<%= r.address.coord[1] %>&lon=<%= r.address.coord[0] %>&name=<%= r.name %>'>Edit</a>
+<a href='/Delete?id=<%= r._id %>&createby=<%=r.createby%>'>Delete</a>
+
+
+
+<a href=/read>Go Back</a>
+</BODY>
+</HTML>

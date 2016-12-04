@@ -1,0 +1,25 @@
+<HTML><BODY>
+<HEAD>
+	
+   <title>Restaurant</title>
+</HEAD>
+<H1>Restaurant</H1>
+<H3>User:<%=user %> &nbsp&nbsp <a href=/logout>Logout</a></H3>
+<H3>Showing <%= r.length %> documents</H3>
+<p><a href=/newRest>New</a></p>
+<form action="/read" method="post">
+<p><select name="option">
+<option value="">-Select option-</option>
+<option value="sname">name</option>
+<option value="sborough">borough</option>
+<option value="scuisine">cuision</option>
+</select>
+<input type="text" name="sinput">
+<input type="submit" value="Search"></p>
+</form>
+<ol>
+  <% r.forEach(function(restaurants) { %>
+  <li><a href='/showdetails?id=<%= restaurants._id %>&createby=<%=restaurants.createby%>'><%= restaurants.name %></a></li>
+  <% });                        %>
+</ol>
+</BODY></HTML>

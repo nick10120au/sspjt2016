@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Update Restaurant</title>
+</head>
+<body>
+
+
+<form action="/edit" method="post" encType="multipart/form-data">
+<input type="hidden" name="id" value="<%=id %>">
+
+	<h2>Name of restaurant:</h2>
+	<input type="text" name="name" value="<%=name %>" required><br>	
+	<h2>Address:</h2>
+
+	Building: <input type="text" name="building" value="<%=building %>"><br>
+	Street: <input type="text" name="street" value="<%=street %>"><br>
+	Zipcode: <input type="text" name="zipcode" value="<%=zipcode %>"><br>
+	<h3>Coordinates:</h3>
+	Longitude: <input type="text" name="lon" value="<%=lon %>"><br>
+	Latitude: <input type="text" name="lat" value="<%=lat %>"><br>
+
+	<h2>Other Info</h2>
+	Borough: <input type="text" name="borough" value="<%=borough %>"><br>
+	Cuisine: <input type="text" name="cuisine" value="<%=cuisine %>"><br>
+	<br>
+
+	<h2>Photo</h2>
+	<input type="file" name="photo" accept="image/*">
+	<br><br>
+	<input type="submit" value="Update">
+	
+	
+</form>
